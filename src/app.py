@@ -58,6 +58,16 @@ def add_member():
     print(new_member_data)
     return jsonify(new_members)
 
+@app.route('/member/<int:id>', methods=['GET'])
+def get_member_id(id):
+    member = jackson_family.get_member(id)
+    print(member)
+    return jsonify({
+        'data': member
+        
+    })
+
+
 
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':

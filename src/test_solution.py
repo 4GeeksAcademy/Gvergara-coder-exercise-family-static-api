@@ -74,8 +74,9 @@ def test_get_single_member_returns_dict(client):
 @pytest.mark.it("The dictionary returned by GET /member/<int:id> should contain one family member with the keys [name, id, age, lucky_numbers]")
 def test_get_single_member_has_keys(client):
     response = client.get('/member/3443')
+    print(response)
     data = json.loads(response.data)
-
+    print(data)
     assert data is not None
     assert "first_name" in data
     assert "id" in data
