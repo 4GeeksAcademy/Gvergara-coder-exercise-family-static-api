@@ -94,7 +94,7 @@ def delete_member(id):
     if result is None:
         return jsonify({"msg": "Miembro no encontrado"}), 404
     else:
-        return jsonify({"data": {"done": True}}), 200
+        return jsonify({"done": True}), 200
 
 
 # this only runs if `$ python src/app.py` is executed
